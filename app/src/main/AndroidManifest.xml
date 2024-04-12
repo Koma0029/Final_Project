@@ -15,17 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_Project"
         tools:targetApi="31">
-        <activity
-            android:name=".ticket.TicketActivity"
-            android:exported="true">
-        </activity>
 
         <activity android:name=".soccer.SoccerActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,15 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".movie.activity.MovieInfoActivity"
-            android:exported="true">
 
-        </activity>
-
-      <activity android:name=".pixels.activity.PexelsActivity"
-          android:exported="true">
-
-      </activity>
     </application>
 
 </manifest>
