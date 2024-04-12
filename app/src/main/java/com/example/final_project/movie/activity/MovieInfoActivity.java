@@ -21,6 +21,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.final_project.R;
 import com.example.final_project.databinding.ActivityMovieInfoBinding;
 import com.example.final_project.databinding.CustomDialogBinding;
+import com.example.final_project.movie.Singleton;
 
 import java.util.Locale;
 
@@ -32,6 +33,16 @@ public class MovieInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMovieInfoBinding.inflate(getLayoutInflater());
+        // Getting language from SharedPreferences with default value "en"
+        Singleton.getInstance().sharedPrefs.initialisePrefs(this);
+        // Getting language from SharedPreferences with default value "en"
+        String language = Singleton.getInstance().sharedPrefs.getString("language", "en");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = getResources().getConfiguration();
+        config.setLocale(locale);
+        createConfigurationContext(config);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
@@ -56,6 +67,24 @@ public class MovieInfoActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed(); // Go back to previous activity
             return true;
+        } if(id == R.id.nav_language){
+            /* Show a dialog to allow the user to choose the language.
+             * When a language option is selected, change the application language accordingly.
+             */
+            final Dialog customDialog = new Dialog(this);
+            CustomDialogBinding dialogBinding = CustomDialogBinding.inflate(LayoutInflater.from(this));
+            customDialog.setContentView(dialogBinding.getRoot());
+
+            RadioGroup radioGroup = customDialog.findViewById(R.id.radioGroup);
+            radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    RadioButton radioButton = customDialog.findViewById(checkedId);
+                    String selectedLanguage = radioButton.getText().toString();
+                    changeAppLanguage(selectedLanguage);
+                }
+            });
+            customDialog.show();
         }
         if (id==R.id.nav_instructions){
             /* Create an AlertDialog to display instructions to the user.
@@ -87,7 +116,7 @@ public class MovieInfoActivity extends AppCompatActivity {
             case "British English":
                 changeLanguage("en-GB");
                 break;
-            case "American Language":
+            case "American English":
                 changeLanguage("en");
                 break;
             default:

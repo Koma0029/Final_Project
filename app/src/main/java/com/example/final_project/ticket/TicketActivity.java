@@ -25,6 +25,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.final_project.R;
 import com.example.final_project.databinding.ActivityTicketBinding;
 import com.example.final_project.databinding.CustomDialogBinding;
+import com.example.final_project.movie.Singleton;
+
 import java.util.Locale;
 
 public class TicketActivity extends AppCompatActivity {
@@ -36,17 +38,15 @@ public class TicketActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         binding = ActivityTicketBinding.inflate(getLayoutInflater());
-//        Singleton.getInstance().sharedPrefs.initialisePrefs(this);
-//        String language = Singleton.getInstance().sharedPrefs.getString("language", "en");
-//        Locale locale = new Locale(language);
-//        Locale.setDefault(locale);
-//        Configuration config = getResources().getConfiguration();
-//        config.setLocale(locale);
-//        createConfigurationContext(config);
-//        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        Singleton.getInstance().sharedPrefs.initialisePrefs(this);
+        String language = Singleton.getInstance().sharedPrefs.getString("language", "en");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = getResources().getConfiguration();
+        config.setLocale(locale);
+        createConfigurationContext(config);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
         setContentView(binding.getRoot());
-
-
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.ticket_host_fragment);
@@ -58,8 +58,6 @@ public class TicketActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
     }
     public NavController getNavController() {
         return navController;
@@ -94,8 +92,6 @@ public class TicketActivity extends AppCompatActivity {
                 }
             });
 
-
-
             customDialog.show();
         }
         if (id==R.id.nav_instructions) {
@@ -126,7 +122,7 @@ public class TicketActivity extends AppCompatActivity {
             case "British English":
                 changeLanguage("en");
                 break;
-            case "American Language":
+            case "American English":
                 changeLanguage("en-GB");
                 break;
             default:

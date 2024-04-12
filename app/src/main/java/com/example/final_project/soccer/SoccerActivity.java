@@ -21,6 +21,7 @@ import androidx.navigation.Navigation;
 import com.example.final_project.R;
 import com.example.final_project.databinding.ActivitySoccerBinding;
 import com.example.final_project.databinding.CustomDialogBinding;
+import com.example.final_project.movie.Singleton;
 
 import java.util.Locale;
 
@@ -32,8 +33,16 @@ public class SoccerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySoccerBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        Singleton.getInstance().sharedPrefs.initialisePrefs(this);
         // Getting language from SharedPreferences with default value "en"
+        String language = Singleton.getInstance().sharedPrefs.getString("language", "en");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = getResources().getConfiguration();
+        config.setLocale(locale);
+        createConfigurationContext(config);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        setContentView(binding.getRoot());
 
         navController = Navigation.findNavController(this, R.id.soccer_fragment);
         setSupportActionBar(binding.toolbar);
@@ -111,7 +120,7 @@ public class SoccerActivity extends AppCompatActivity {
             case "British English":
                 changeLanguage("en");
                 break;
-            case "American Language":
+            case "American English":
                 changeLanguage("en-GB");
                 break;
             default:

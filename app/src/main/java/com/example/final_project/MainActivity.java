@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             case "British English":
                 changeLanguage("en-GB");
                 break;
-            case "American Language":
+            case "American English":
                 changeLanguage("en");
                 break;
             default:
