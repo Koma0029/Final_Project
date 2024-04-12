@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ticket_nav_graph.xml"
+    app:startDestination="@id/ticketsListFragment">
+
+    <fragment
+        android:id="@+id/ticketsListFragment"
+        android:name="com.example.final_project.ticket.TicketsListFragment"
+        android:label="TicketsListFragment"
+        tools:layout="@layout/fragment_tickets_list"/>
+    <fragment
+        android:id="@+id/savedTicketFrafment"
+        android:name="com.example.final_project.ticket.SavedTicketFrafment"
+        android:label="SavedTicketFrafment"
+        tools:layout="@layout/fragment_saved_ticket_frafment"/>
+    <fragment
+        android:id="@+id/ticketDetailsFragment"
+        android:name="com.example.final_project.ticket.TicketDetailsFragment"
+        android:label="TicketDetailsFragment"
+        tools:layout="@layout/fragment_ticket_details"/>
+</navigation>
