@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pexel_graph.xml"
+    app:startDestination="@id/pexelsListFragment">
+
+    <fragment
+        android:id="@+id/pexelsListFragment"
+        android:name="com.example.final_project.pixels.fragment.PexelsListFragment"
+        android:label="PexelsListFragment"
+        tools:layout="@layout/fragment_pexels_list"/>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.final_project.pixels.fragment.ImageFragment"
+        android:label="ImageFragment" />
+    <fragment
+        android:id="@+id/savedImageFragment"
+        android:name="com.example.final_project.pixels.fragment.SavedImageFragment"
+        android:label="SavedImageFragment" />
+
+</navigation>
