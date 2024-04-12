@@ -18,4 +18,20 @@
     <string name="american_english">American English</string>
     <string name="ticket_instruction">1. Start by searching for city on Ticket Screen by entering your search text.\n2. Once you click on the search button, a list of items matching your search will be displayed.\n3. Click on any item in the list to view its details.\n4. Click on save button in the list to save your particular event.\n5. Saved event ticket  can be accessed by clicking on the \'Saved Events\' button on the search screen, where you can also delete saved items.</string>
     <string name="algon">AlgonQuin</string>
+
+    <string name="jashan_deep">Soccer Jashandeep Kaur 4</string>
+    <string name="date_match">Date of Match:</string>
+    <string name="Team_1">Team 1</string>
+    <string name="Team_2">Team 2</string>
+    <string name="highlight">Highlight</string>
+    <string name="team_name">Team Name:</string>
+    <string name="team_url">Team URL</string>
+
+    <string name="save_match">Save Match</string>
+    <string name="saved_match">Saved Matches</string>
+    <string name="video_link">Saved Video Link</string>
+    <string name="match_instruction">1.Click on a match list item to view its details.\nOn the match details screen, there are options:\n2.Click on Highlights to redirect to the match\'s webpage.\n3.Click on Video Link to redirect to the match\'s video.\n4.To save the match, click on Save Match.\n5.On the match list screen, you can view your saved matches.</string>
+
+
+
 </resources>

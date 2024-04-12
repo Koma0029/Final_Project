@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/soccer_graph.xml"
+    app:startDestination="@id/soccerFragment">
+
+    <fragment
+        android:id="@+id/matchDetalFragment"
+        android:name="com.example.final_project.soccer.MatchDetalFragment"
+        android:label="fragment_match_detal"
+        tools:layout="@layout/fragment_match_detal" />
+    <fragment
+        android:id="@+id/savedMatchFragment"
+        android:name="com.example.final_project.soccer.SavedMatchFragment"
+        android:label="fragment_saved_match"
+        tools:layout="@layout/fragment_saved_match" />
+    <fragment
+        android:id="@+id/soccerFragment"
+        android:name="com.example.final_project.soccer.SoccerFragment"
+        android:label="fragment_soccer"
+        tools:layout="@layout/fragment_soccer" />
+    <fragment
+        android:id="@+id/savedDetailFragment"
+        android:name="com.example.final_project.soccer.SavedDetailFragment"
+        android:label="SavedDetailFragment"
+        tools:layout="@layout/fragment_saved_detail"/>
+</navigation>
