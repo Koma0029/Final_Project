@@ -32,19 +32,11 @@ public class SoccerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySoccerBinding.inflate(getLayoutInflater());
-   //     Singleton.getInstance().sharedPrefs.initialisePrefs(this);
-        // Getting language from SharedPreferences with default value "en"
-        // Getting language from SharedPreferences with default value "en"
-//        String language = Singleton.getInstance().sharedPrefs.getString("language", "en");
-//        changeLanguage(language);
-
-         setContentView(binding.getRoot());
+        setContentView(binding.getRoot());
         // Getting language from SharedPreferences with default value "en"
 
         navController = Navigation.findNavController(this, R.id.soccer_fragment);
         setSupportActionBar(binding.toolbar);
-
-
 
     }
     public NavController getNavController() {

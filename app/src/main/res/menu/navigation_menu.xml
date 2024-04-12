@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/ticket"
+        android:title="@string/ticket_master"/>
+    <item android:id="@+id/movie_in"
+        android:title="@string/movie_info"/>
+    <item android:id="@+id/pexel"
+        android:title="@string/pexel"/>
+    <item android:id="@+id/soccer"
+        android:title="@string/soccer_match_highlight"/>
+
+</menu>
