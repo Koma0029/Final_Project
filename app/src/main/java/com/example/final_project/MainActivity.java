@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import com.example.final_project.databinding.ActivityMainBinding;
 import com.example.final_project.databinding.CustomDialogBinding;
 import com.example.final_project.movie.activity.MovieInfoActivity;
+import com.example.final_project.pixels.activity.PexelsActivity;
 import com.example.final_project.soccer.SoccerActivity;
 import com.example.final_project.ticket.TicketActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplication(), TicketActivity.class);
                     startActivity(intent);
                 }else if(id == R.id.pexel){
-
+                    Intent intent = new Intent(getApplication(), PexelsActivity.class);
+                    startActivity(intent);
                 }else if(id == R.id.movie_in){
                     Intent intent = new Intent(getApplication(), MovieInfoActivity.class);
                     startActivity(intent);
